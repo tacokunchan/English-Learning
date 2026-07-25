@@ -6,6 +6,7 @@ import { words } from "@/data/words";
 // bbb
 // ccc
 // ddd
+// eee
 export default function Home() {
   const featuredWords = words.slice(0, 3);
 
