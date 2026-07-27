@@ -3,7 +3,6 @@ import WordCard from "@/components/WordCard";
 import { words } from "@/data/words";
 
 // aaa
-// bbb
 
 export default function Home() {
   const featuredWords = words.slice(0, 3);
