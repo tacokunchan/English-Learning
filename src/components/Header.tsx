@@ -17,6 +17,9 @@ export default function Header() {
           <Link href="/words" className="hover:text-indigo-600">
             単語一覧
           </Link>
+          <Link href="/quiz" className="hover:text-indigo-600">
+            クイズ
+          </Link>
         </nav>
       </div>
     </header>
