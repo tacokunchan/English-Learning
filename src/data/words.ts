@@ -16,6 +16,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "name という箱に \"Taro\"、age という箱に 15 を入れています。あとから console.log で中身を取り出して表示できます。",
     },
+    pythonCode: `name = "Taro"\nage = 15\n\nprint(name)\nprint(age)`,
     relatedSlugs: ["string", "boolean", "const"],
   },
   {
@@ -33,6 +34,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "greet という関数を作り、名前を渡すとあいさつ文を返すようにしています。呼び出すたびに同じ処理を再利用できます。",
     },
+    pythonCode: `def greet(name):\n    return "こんにちは、" + name + "さん"\n\nprint(greet("花子"))`,
     relatedSlugs: ["return", "variable", "argument"],
   },
   {
@@ -50,6 +52,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "add 関数は a + b の結果を return で返します。result にはその返された値 8 が入ります。",
     },
+    pythonCode: `def add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)`,
     relatedSlugs: ["function"],
   },
   {
@@ -67,6 +70,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "score が 60 以上かどうかで表示するメッセージを変えています。この場合は「合格です」が表示されます。",
     },
+    pythonCode: `score = 80\n\nif score >= 60:\n    print("合格です")\nelse:\n    print("不合格です")`,
     relatedSlugs: ["boolean", "for", "else"],
   },
   {
@@ -84,6 +88,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "i を 1 から 3 まで増やしながら、中の処理を3回繰り返します。「1回目」「2回目」「3回目」と表示されます。",
     },
+    pythonCode: `for i in range(1, 4):\n    print(str(i) + "回目")`,
     relatedSlugs: ["if", "array"],
   },
   {
@@ -101,6 +106,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "count が 3 未満である間、繰り返し処理を続けます。count を1ずつ増やし、3になったら止まります。",
     },
+    pythonCode: `count = 0\n\nwhile count < 3:\n    print("count: " + str(count))\n    count = count + 1`,
     relatedSlugs: ["for", "if"],
   },
   {
@@ -118,6 +124,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "fruits という配列に3つの果物を入れています。fruits[0] は先頭の「りんご」、length は要素数の3を表します。",
     },
+    pythonCode: `fruits = ["りんご", "みかん", "ぶどう"]\n\nprint(fruits[0])\nprint(len(fruits))`,
     relatedSlugs: ["for", "variable", "index"],
   },
   {
@@ -135,6 +142,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "message は文字列です。length で文字数、toUpperCase() で大文字に変換した結果を確認できます。",
     },
+    pythonCode: `message = "Hello, World!"\n\nprint(len(message))\nprint(message.upper())`,
     relatedSlugs: ["variable", "boolean"],
   },
   {
@@ -152,6 +160,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "isStudent と isAdult は true か false のどちらかだけを持つ変数です。if 文の条件判定などによく使われます。",
     },
+    pythonCode: `is_student = True\nis_adult = False\n\nprint(is_student)\nprint(is_adult)`,
     relatedSlugs: ["if", "variable"],
   },
   {
@@ -169,6 +178,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "Dog という設計図（クラス）から、new を使って「ポチ」という実際の犬（インスタンス）を作り、bark メソッドを呼び出しています。",
     },
+    pythonCode: `class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        print(self.name + ": ワン！")\n\npochi = Dog("ポチ")\npochi.bark()`,
     relatedSlugs: ["function", "variable", "method"],
   },
   {
@@ -187,6 +197,7 @@ export const words: ProgrammingWord[] = [
         "math.js というファイルから add 関数を取り込んで、このファイルの中で使えるようにしています。",
       runnable: false,
     },
+    pythonCode: `# mymath.py というファイルに add 関数があるとする\nfrom mymath import add\n\nprint(add(2, 3))`,
     relatedSlugs: ["function", "export"],
   },
   {
@@ -205,6 +216,7 @@ export const words: ProgrammingWord[] = [
         "add 関数の前に export をつけることで、この関数を他のファイルから import して使えるようになります。",
       runnable: false,
     },
+    pythonCode: `# mymath.py というファイルの中身とする\ndef add(a, b):\n    return a + b\n\n# Python には export という単語はありません。\n# ファイルの中で定義しておくだけで、他のファイルから使えます。`,
     relatedSlugs: ["import", "function"],
   },
   {
@@ -222,6 +234,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "console.log は括弧の中に書いたものを画面に表示します。「はじめまして！」と、1+1の計算結果である 2 が表示されます。",
     },
+    pythonCode: `print("はじめまして！")\nprint(1 + 1)`,
     relatedSlugs: ["variable", "string"],
   },
   {
@@ -239,6 +252,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "const で作った pi の値は変更できません。コメントを外して2行目の代入を実行すると、エラーになる様子を確認できます。",
     },
+    pythonCode: `PI = 3.14  # Python には const はありません。大文字の名前にして「定数のつもり」だと示す習慣があります\n\nprint(PI)\n\n# PI = 3.15  # 書き換えてもエラーにはなりません（あくまで人間どうしの約束ごとです）`,
     relatedSlugs: ["variable"],
   },
   {
@@ -256,6 +270,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "price と taxRate はどちらも number（数値）です。数値どうしはそのまま計算に使うことができます。",
     },
+    pythonCode: `price = 500\ntax_rate = 0.1\n\nprint(price * (1 + tax_rate))`,
     relatedSlugs: ["variable", "string"],
   },
   {
@@ -273,6 +288,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "student というオブジェクトに name と age の2つの情報をまとめています。student.name のようにドットでつなげて値を取り出せます。",
     },
+    pythonCode: `student = {\n    "name": "太郎",\n    "age": 15,\n}\n\nprint(student["name"])\nprint(student["age"])`,
     relatedSlugs: ["array", "class"],
   },
   {
@@ -290,6 +306,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "weather は \"sunny\" ではないので if の中は実行されず、else の中の「家で本を読もう」が表示されます。",
     },
+    pythonCode: `weather = "rain"\n\nif weather == "sunny":\n    print("公園に行こう")\nelse:\n    print("家で本を読もう")`,
     relatedSlugs: ["if"],
   },
   {
@@ -307,6 +324,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "4 と 5 が multiply 関数の引数（argument）として渡されています。関数の中では a と b という名前でこの値を使えます。",
     },
+    pythonCode: `def multiply(a, b):\n    return a * b\n\nprint(multiply(4, 5))`,
     relatedSlugs: ["function", "return"],
   },
   {
@@ -324,6 +342,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "bark は dog オブジェクトが持つメソッドです。dog.bark() のように呼び出すと、そのオブジェクトに関する処理を実行できます。",
     },
+    pythonCode: `class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        print(self.name + ": ワン！")\n\ndog = Dog("ポチ")\ndog.bark()`,
     relatedSlugs: ["class", "function"],
   },
   {
@@ -341,6 +360,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "colors[0] は先頭の「赤」を指します。0から数え始めるので、colors[2] は3番目の「緑」になります。",
     },
+    pythonCode: `colors = ["赤", "青", "緑"]\n\nprint(colors[0])\nprint(colors[1])\nprint(colors[2])`,
     relatedSlugs: ["array", "for"],
   },
   {
@@ -358,6 +378,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "// で始まる部分はプログラムとして無視されます。score の値である 100 だけが表示されます。",
     },
+    pythonCode: `# これはコメントです。実行はされません。\nscore = 100\n\nprint(score)  # ここにもコメントを書けます`,
     relatedSlugs: ["variable"],
   },
   {
