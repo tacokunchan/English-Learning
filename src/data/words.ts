@@ -16,7 +16,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "name という箱に \"Taro\"、age という箱に 15 を入れています。あとから console.log で中身を取り出して表示できます。",
     },
-    relatedSlugs: ["string", "boolean"],
+    relatedSlugs: ["string", "boolean", "const"],
   },
   {
     slug: "function",
@@ -33,7 +33,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "greet という関数を作り、名前を渡すとあいさつ文を返すようにしています。呼び出すたびに同じ処理を再利用できます。",
     },
-    relatedSlugs: ["return", "variable"],
+    relatedSlugs: ["return", "variable", "argument"],
   },
   {
     slug: "return",
@@ -67,7 +67,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "score が 60 以上かどうかで表示するメッセージを変えています。この場合は「合格です」が表示されます。",
     },
-    relatedSlugs: ["boolean", "for"],
+    relatedSlugs: ["boolean", "for", "else"],
   },
   {
     slug: "for",
@@ -118,7 +118,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "fruits という配列に3つの果物を入れています。fruits[0] は先頭の「りんご」、length は要素数の3を表します。",
     },
-    relatedSlugs: ["for", "variable"],
+    relatedSlugs: ["for", "variable", "index"],
   },
   {
     slug: "string",
@@ -169,7 +169,7 @@ export const words: ProgrammingWord[] = [
       outputJa:
         "Dog という設計図（クラス）から、new を使って「ポチ」という実際の犬（インスタンス）を作り、bark メソッドを呼び出しています。",
     },
-    relatedSlugs: ["function", "variable"],
+    relatedSlugs: ["function", "variable", "method"],
   },
   {
     slug: "import",
@@ -185,8 +185,27 @@ export const words: ProgrammingWord[] = [
       code: `// math.js というファイルに add 関数があるとする\nimport { add } from "./math.js";\n\nconsole.log(add(2, 3));`,
       outputJa:
         "math.js というファイルから add 関数を取り込んで、このファイルの中で使えるようにしています。",
+      runnable: false,
     },
-    relatedSlugs: ["function"],
+    relatedSlugs: ["function", "export"],
+  },
+  {
+    slug: "export",
+    term: "export",
+    pronunciation: "エクスポート",
+    meaningJa: "外に出す",
+    category: "module",
+    difficulty: 2,
+    explanationJa:
+      "「輸出する・外に出す」という意味の単語です。import とペアで使い、あるファイルの中で作った関数や変数を、他のファイルからも使えるように公開するときに使います。",
+    example: {
+      language: "javascript",
+      code: `// math.js というファイルの中身とする\nexport function add(a, b) {\n  return a + b;\n}`,
+      outputJa:
+        "add 関数の前に export をつけることで、この関数を他のファイルから import して使えるようになります。",
+      runnable: false,
+    },
+    relatedSlugs: ["import", "function"],
   },
   {
     slug: "print",
@@ -204,6 +223,159 @@ export const words: ProgrammingWord[] = [
         "console.log は括弧の中に書いたものを画面に表示します。「はじめまして！」と、1+1の計算結果である 2 が表示されます。",
     },
     relatedSlugs: ["variable", "string"],
+  },
+  {
+    slug: "const",
+    term: "const",
+    pronunciation: "コンスト",
+    meaningJa: "定数（変わらない値）",
+    category: "type",
+    difficulty: 1,
+    explanationJa:
+      "「constant（一定の）」を短くした単語です。let で作る変数とは違い、一度入れた値を後から変更できない変数を作るときに使います。",
+    example: {
+      language: "javascript",
+      code: `const pi = 3.14;\n\nconsole.log(pi);\n\n// pi = 3.15; // ← コメントを外すとエラーになります`,
+      outputJa:
+        "const で作った pi の値は変更できません。コメントを外して2行目の代入を実行すると、エラーになる様子を確認できます。",
+    },
+    relatedSlugs: ["variable"],
+  },
+  {
+    slug: "number",
+    term: "number",
+    pronunciation: "ナンバー",
+    meaningJa: "数値",
+    category: "type",
+    difficulty: 1,
+    explanationJa:
+      "そのまま「数」という意味の単語です。プログラミングでは、整数や小数などの数字を表すデータの種類を指します。",
+    example: {
+      language: "javascript",
+      code: `let price = 500;\nlet taxRate = 0.1;\n\nconsole.log(price * (1 + taxRate));`,
+      outputJa:
+        "price と taxRate はどちらも number（数値）です。数値どうしはそのまま計算に使うことができます。",
+    },
+    relatedSlugs: ["variable", "string"],
+  },
+  {
+    slug: "object",
+    term: "object",
+    pronunciation: "オブジェクト",
+    meaningJa: "オブジェクト（もの）",
+    category: "type",
+    difficulty: 2,
+    explanationJa:
+      "「もの・物体」という意味の単語です。プログラミングでは、名前(キー)と値をセットにして、複数のデータを1つにまとめて管理できるデータの種類を指します。",
+    example: {
+      language: "javascript",
+      code: `let student = {\n  name: "太郎",\n  age: 15,\n};\n\nconsole.log(student.name);\nconsole.log(student.age);`,
+      outputJa:
+        "student というオブジェクトに name と age の2つの情報をまとめています。student.name のようにドットでつなげて値を取り出せます。",
+    },
+    relatedSlugs: ["array", "class"],
+  },
+  {
+    slug: "else",
+    term: "else",
+    pronunciation: "エルス",
+    meaningJa: "そうでなければ",
+    category: "control",
+    difficulty: 1,
+    explanationJa:
+      "「それ以外は」という意味の単語です。if とセットで使い、条件が false だったときに実行する処理を書くために使います。",
+    example: {
+      language: "javascript",
+      code: `let weather = "rain";\n\nif (weather === "sunny") {\n  console.log("公園に行こう");\n} else {\n  console.log("家で本を読もう");\n}`,
+      outputJa:
+        "weather は \"sunny\" ではないので if の中は実行されず、else の中の「家で本を読もう」が表示されます。",
+    },
+    relatedSlugs: ["if"],
+  },
+  {
+    slug: "argument",
+    term: "argument",
+    pronunciation: "アーギュメント",
+    meaningJa: "引数",
+    category: "function",
+    difficulty: 2,
+    explanationJa:
+      "「主張・論点」という意味も持つ単語ですが、プログラミングでは関数を呼び出すときに渡す値のことを指します。関数はこの値を受け取って処理を行います。",
+    example: {
+      language: "javascript",
+      code: `function multiply(a, b) {\n  return a * b;\n}\n\nconsole.log(multiply(4, 5));`,
+      outputJa:
+        "4 と 5 が multiply 関数の引数（argument）として渡されています。関数の中では a と b という名前でこの値を使えます。",
+    },
+    relatedSlugs: ["function", "return"],
+  },
+  {
+    slug: "method",
+    term: "method",
+    pronunciation: "メソッド",
+    meaningJa: "メソッド（オブジェクトの中の関数）",
+    category: "oop",
+    difficulty: 2,
+    explanationJa:
+      "「方法・手段」という意味の単語です。プログラミングでは、オブジェクトやクラスの中に定義された関数のことを指します。",
+    example: {
+      language: "javascript",
+      code: `let dog = {\n  name: "ポチ",\n  bark() {\n    console.log(this.name + ": ワン！");\n  },\n};\n\ndog.bark();`,
+      outputJa:
+        "bark は dog オブジェクトが持つメソッドです。dog.bark() のように呼び出すと、そのオブジェクトに関する処理を実行できます。",
+    },
+    relatedSlugs: ["class", "function"],
+  },
+  {
+    slug: "index",
+    term: "index",
+    pronunciation: "インデックス",
+    meaningJa: "添字（番号）",
+    category: "type",
+    difficulty: 2,
+    explanationJa:
+      "「索引・目印」という意味の単語です。配列の中で、それぞれのデータが何番目にあるかを表す番号のことを指します。多くのプログラミング言語では0番目から数え始めます。",
+    example: {
+      language: "javascript",
+      code: `let colors = ["赤", "青", "緑"];\n\nconsole.log(colors[0]);\nconsole.log(colors[1]);\nconsole.log(colors[2]);`,
+      outputJa:
+        "colors[0] は先頭の「赤」を指します。0から数え始めるので、colors[2] は3番目の「緑」になります。",
+    },
+    relatedSlugs: ["array", "for"],
+  },
+  {
+    slug: "comment",
+    term: "comment",
+    pronunciation: "コメント",
+    meaningJa: "コメント（説明書き）",
+    category: "syntax",
+    difficulty: 1,
+    explanationJa:
+      "「注釈・説明」という意味の単語です。プログラムの中にメモを書き残す機能で、// から始めた部分はプログラムとして実行されず、人間が読むためだけの説明文になります。",
+    example: {
+      language: "javascript",
+      code: `// これはコメントです。実行はされません。\nlet score = 100;\n\nconsole.log(score); // ここにもコメントを書けます`,
+      outputJa:
+        "// で始まる部分はプログラムとして無視されます。score の値である 100 だけが表示されます。",
+    },
+    relatedSlugs: ["variable"],
+  },
+  {
+    slug: "try-catch",
+    term: "try / catch",
+    pronunciation: "トライ / キャッチ",
+    meaningJa: "エラーに備える",
+    category: "error",
+    difficulty: 3,
+    explanationJa:
+      "try は「試す」、catch は「捕まえる」という意味です。エラー(error)が起きそうな処理を try の中に書いておくと、実際にエラーが起きたときに catch がそれを受け止めて、プログラム全体が止まってしまうのを防げます。",
+    example: {
+      language: "javascript",
+      code: `try {\n  console.log("計算をはじめます");\n  JSON.parse("これはJSONではありません");\n  console.log("ここには届きません");\n} catch (error) {\n  console.log("エラーが発生しました: " + error.message);\n}`,
+      outputJa:
+        "JSON.parse の行でエラーが発生すると、try の中の残りの処理は飛ばされ、catch の中の処理が実行されます。プログラム自体は止まらずに続きます。",
+    },
+    relatedSlugs: ["if"],
   },
 ];
 
