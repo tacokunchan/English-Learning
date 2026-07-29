@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import CodeBlock from "@/components/CodeBlock";
+import CodeRunner from "@/components/CodeRunner";
 import WordCard from "@/components/WordCard";
 import { getRelatedWords, getWordBySlug, words } from "@/data/words";
 import { CATEGORY_LABELS } from "@/types/word";
@@ -72,10 +72,13 @@ export default async function WordDetailPage({ params }: { params: Params }) {
           実際に使ってみると？
         </h2>
         <p className="mt-2 text-sm text-slate-600">
-          このコードを実行すると、どんなことができるのか見てみましょう。
+          コードは自由に書き換えられます。「実行する」を押すと、その場で結果を確認できます。
         </p>
         <div className="mt-3">
-          <CodeBlock code={word.example.code} />
+          <CodeRunner
+            code={word.example.code}
+            runnable={word.example.runnable !== false}
+          />
         </div>
         <p className="mt-3 rounded-lg bg-amber-50 p-3 text-sm leading-relaxed text-amber-900">
           {word.example.outputJa}
