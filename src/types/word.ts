@@ -4,12 +4,16 @@ export type WordCategory =
   | "function"
   | "oop"
   | "io"
-  | "module";
+  | "module"
+  | "syntax"
+  | "error";
 
 export interface CodeExample {
   language: "javascript";
   code: string;
   outputJa: string;
+  /** false の場合、ブラウザ上では実行できない例（別ファイル参照など）であることを示す */
+  runnable?: boolean;
 }
 
 export interface ProgrammingWord {
@@ -31,4 +35,6 @@ export const CATEGORY_LABELS: Record<WordCategory, string> = {
   oop: "オブジェクト指向",
   io: "入出力",
   module: "モジュール",
+  syntax: "書き方の基本",
+  error: "エラー処理",
 };
