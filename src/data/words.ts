@@ -389,13 +389,14 @@ export const words: ProgrammingWord[] = [
     category: "error",
     difficulty: 3,
     explanationJa:
-      "try は「試す」、catch は「捕まえる」という意味です。エラー(error)が起きそうな処理を try の中に書いておくと、実際にエラーが起きたときに catch がそれを受け止めて、プログラム全体が止まってしまうのを防げます。",
+      "try は「試す」、catch は「捕まえる」という意味です。エラー(error)が起きそうな処理を try の中に書いておくと、実際にエラーが起きたときに catch がそれを受け止めて、プログラム全体が止まってしまうのを防げます。ちなみに Python では catch の代わりに except（除く）という単語を使います。",
     example: {
       language: "javascript",
       code: `try {\n  console.log("計算をはじめます");\n  JSON.parse("これはJSONではありません");\n  console.log("ここには届きません");\n} catch (error) {\n  console.log("エラーが発生しました: " + error.message);\n}`,
       outputJa:
         "JSON.parse の行でエラーが発生すると、try の中の残りの処理は飛ばされ、catch の中の処理が実行されます。プログラム自体は止まらずに続きます。",
     },
+    pythonCode: `try:\n    print("計算をはじめます")\n    int("これは数字ではありません")\n    print("ここには届きません")\nexcept Exception as error:\n    print("エラーが発生しました: " + str(error))`,
     relatedSlugs: ["if"],
   },
 ];

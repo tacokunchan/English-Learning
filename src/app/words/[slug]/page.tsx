@@ -78,6 +78,7 @@ export default async function WordDetailPage({ params }: { params: Params }) {
           <CodeRunner
             code={word.example.code}
             runnable={word.example.runnable !== false}
+            pythonCode={word.pythonCode}
           />
         </div>
         <p className="mt-3 rounded-lg bg-amber-50 p-3 text-sm leading-relaxed text-amber-900">

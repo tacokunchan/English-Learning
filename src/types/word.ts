@@ -25,6 +25,8 @@ export interface ProgrammingWord {
   difficulty: 1 | 2 | 3;
   explanationJa: string;
   example: CodeExample;
+  /** JavaScript版との比較用。表示のみで実行はできない */
+  pythonCode?: string;
   relatedSlugs?: string[];
 }
 
